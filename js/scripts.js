@@ -1,19 +1,26 @@
 $(document).ready(function() {
   $("#formOne").submit(function(event){
     event.preventDefault();
-    const person1Input = $("input#person1").val();
-    const person2Input = $("input#person2").val();
-    const animalInput = $("input#animal").val();
-    const exclamationInput = $("input#exclamation").val();
-    const verbInput = $("input#verb").val();
-    const nounInput = $("input#noun").val();
+    const input = [];
+    const output = [".person1", ".person2", ".animal" ,".exclamation" ,".verb" ,".noun"];
+    input.push($("input#person1").val());
+    input.push($("input#person2").val());
+    input.push($("input#animal").val());
+    input.push ($("input#exclamation").val());
+    input.push ($("input#verb").val());
+    input.push ($("input#noun").val());
 
-    $(".person1").append(person1Input);
-    $(".person2").append(person2Input);
-    $(".animal").append(animalInput);
-    $(".exclamation").append(exclamationInput);
-    $(".verb").append(verbInput);
-    $(".noun").append(nounInput);
+    output.forEach(function(element) {
+      console.log(element);
+      $(element).append(input[element]);
+    });
+
+    $(".person1").append(input[0]);
+    $(".person2").append(input[1]);
+    $(".animal").append(input[2]);
+    $(".exclamation").append(input[3]);
+    $(".verb").append(input[4]);
+    $(".noun").append(input[5]);
 
     $("#story").show();
   });
