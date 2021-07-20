@@ -11,17 +11,9 @@ $(document).ready(function() {
     input.push ($("input#noun").val());
 
     output.forEach(function(element) {
-      console.log(element);
-      $(element).append(input[element]);
+      console.log(output.indexOf(element));
+      $(element).append(input[output.indexOf(element)]);
     });
-
-    $(".person1").append(input[0]);
-    $(".person2").append(input[1]);
-    $(".animal").append(input[2]);
-    $(".exclamation").append(input[3]);
-    $(".verb").append(input[4]);
-    $(".noun").append(input[5]);
-
     $("#story").show();
   });
 });
